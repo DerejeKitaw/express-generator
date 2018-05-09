@@ -4,7 +4,7 @@
   "description": "Node server",
   "main": "server.js",
   "scripts": {
-    "test": "test",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha ../API/test/*.test.js",
     "start": "node server.js",
     "dev": "concurrently \"tsc -w\" \"nodemon ./dist/server/server.js\""
   },
@@ -13,6 +13,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.1",
@@ -21,9 +22,13 @@
   },
   "devDependencies": {
     "@types/node": "~6.0.60",
+    "concurrently": "^3.5.1",
+    "expect": "^1.20.2",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
-    "typescript": "~2.3.3",
-    "concurrently":"^3.5.1"
+    "typescript": "~2.3.3"
   }
 }

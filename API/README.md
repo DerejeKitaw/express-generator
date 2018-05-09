@@ -38,7 +38,6 @@ npm install express mongoose body-parser passport bcryptjs jsonwebtoken dotenv
     "concurrently":"^3.5.1"
   }
 ```
-
 ### Create server.js
 ```js
 const express = require('express');
@@ -79,4 +78,17 @@ module.exports = router;
 ### Add script to run
 ```json
 "dev": "concurrently \"tsc -w\" \"nodemon ./dist/server/server.js\""
+```
+### Add test script mocha
+```json
+"test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha API/**/*.test.js",
+```
+### Add dev dependency
+```json
+"devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
+  }
 ```
